@@ -1,0 +1,13 @@
+[
+  {
+    "name": "/status replies with operational status",
+    "steps": [
+      {
+        "send": { "text": "/status" },
+        "expect": [
+          { "method": "sendMessage", "payload": { "text": "Bot is operational." } }
+        ]
+      }
+    ]
+  }
+]
