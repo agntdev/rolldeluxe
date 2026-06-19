@@ -2,7 +2,7 @@
 
 Summary
 
-RollDeluxe is a tiny, single-purpose Telegram bot that responds to two commands: /start (friendly intro) and /roll (returns a single random integer 1–6). No persistence, no external APIs, no inline keyboards — intentionally minimal.
+RollDeluxe is a tiny, single-purpose Telegram bot that responds to four commands: /start (friendly intro), /roll (returns a single random integer 1–6), /status (bot operational status), and /help (lists available commands). No persistence, no external APIs, no inline keyboards — intentionally minimal.
 
 Audience
 
@@ -32,11 +32,23 @@ Interaction flows
    - Bot action: generate a single random integer between 1 and 6 and reply with a single-line plain-text message containing only that integer (e.g. "4").  
    - Use Telegram sendMessage with chat_id and text set to the integer string; no extra formatting or markup.
 
+3) /status
+   - Trigger: user sends "/status".  
+   - Bot action: reply with the text "Bot is operational."  
+   - Use Telegram sendMessage; no extra formatting or markup.
+
+4) /help
+   - Trigger: user sends "/help".  
+   - Bot action: reply with a list of available commands and their descriptions.  
+   - Exact reply text: "Available commands:\n\n/start — Start the bot\n/status — Get bot operational status\n/help — Show this help message"
+
 Command registration
 
 - Set bot commands to: 
   - /start — Short welcome and usage
   - /roll — Roll a six-sided die
+  - /status — Get bot operational status
+  - /help — Show this help message
 - Bot responds when these commands are received in private chats or group chats (standard Telegram command addressing rules apply).
 
 Persistence
