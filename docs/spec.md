@@ -72,7 +72,7 @@ Implementation notes
 ## Assumptions & defaults
 
 - Use long polling (getUpdates) by default — simplest deployment for a tiny bot with no external infra required.  
-- Bot token must be provided in environment variable ROLLDELUXE_BOT_TOKEN — explicit, unique name avoids collisions and keeps config simple.  
+- Bot token must be provided in environment variable BOT_TOKEN.  
 - /roll reply contains only the integer ("1".."6") as plain text — this matches the owner's "single random integer" requirement exactly.  
 - Use a cryptographically secure RNG when available (e.g., SystemRandom or equivalent) — ensures unpredictable rolls without a complex dependency chain.  
 - Minimal logging to stdout (startup, incoming update summary, errors) — enough for debugging while keeping privacy and no persistence.
