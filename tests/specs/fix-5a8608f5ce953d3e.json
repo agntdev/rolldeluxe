@@ -1,0 +1,18 @@
+[
+  {
+    "name": "/start sends welcome to RollDeluxe without inline keyboard",
+    "steps": [
+      {
+        "send": { "text": "/start" },
+        "expect": [
+          {
+            "method": "sendMessage",
+            "payload": {
+              "text": "Welcome to RollDeluxe! Send /roll to roll a six-sided die (1–6)."
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
