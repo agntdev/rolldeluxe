@@ -18,10 +18,10 @@ export interface SuiteResult {
  * Run many specs, each against a FRESH bot from `makeBot` (isolation — capture
  * state and the fake botInfo are per-bot). Returns the aggregate.
  */
-export async function runSpecs(makeBot: () => Bot<any>, specs: BotSpec[]): Promise<SuiteResult> {
+export async function runSpecs(makeBot: () => Bot<any> | Promise<Bot<any>>, specs: BotSpec[]): Promise<SuiteResult> {
   const results: SpecResult[] = [];
   for (const spec of specs) {
-    results.push(await runSpec(makeBot(), spec));
+    results.push(await runSpec(await makeBot(), spec));
   }
   const passed = results.filter((r) => r.ok).length;
   return { total: results.length, passed, failed: results.length - passed, results };
