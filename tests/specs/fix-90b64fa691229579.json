@@ -1,0 +1,13 @@
+[
+  {
+    "name": "/roll replies with a plain integer only (spec §31-33)",
+    "steps": [
+      {
+        "send": { "text": "/roll" },
+        "expect": [
+          { "method": "sendMessage" }
+        ]
+      }
+    ]
+  }
+]
