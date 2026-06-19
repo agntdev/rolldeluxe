@@ -1,0 +1,18 @@
+[
+  {
+    "name": "/help shows available commands",
+    "steps": [
+      {
+        "send": { "text": "/help" },
+        "expect": [
+          {
+            "method": "sendMessage",
+            "payload": {
+              "text": "Available commands:\n\n/start — Start the bot\n/status — Get bot operational status\n/help — Show this help message"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
