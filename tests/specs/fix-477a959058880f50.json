@@ -1,0 +1,18 @@
+[
+  {
+    "name": "/spec shows spec reference and available commands",
+    "steps": [
+      {
+        "send": { "text": "/spec" },
+        "expect": [
+          {
+            "method": "sendMessage",
+            "payload": {
+              "text": "RollDeluxe follows the spec at docs/spec.md.\nAvailable commands: /start, /roll, /status, /help\nType /help for descriptions."
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
